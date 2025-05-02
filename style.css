@@ -89,7 +89,7 @@
     
     /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(13, 110, 253, 0.7), rgba(13, 110, 253, 0.9)), url('images/Hero.jpg') center center / cover no-repeat;
+      background: linear-gradient(rgba(13, 110, 253, 0.7), rgba(13, 110, 253, 0.9)), url('images/Hero.png') center center / cover no-repeat;
       color: white;
       text-align: center;
       padding: 150px 0;
