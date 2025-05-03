@@ -24,6 +24,355 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
   <link href="style.css" rel="stylesheet" />
+   <!-- <style>
+    :root {
+        --primary: #e63946;
+        --primary-dark: #bc2c37;
+        --secondary: #1d3557;
+        --light: #f1faee;
+        --accent: #a8dadc;
+        --dark: #1d3557;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+        background-color: #fafafa;
+        overflow-x: hidden;
+    }
+    
+    .hero-container {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        overflow: hidden;
+        background-color: var(--dark);
+    }
+    
+    .maple-grid {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        opacity: 0.07;
+    }
+    
+    .maple-leaf {
+        fill: var(--light);
+        width: 50px;
+        height: 50px;
+        opacity: 0.5;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 100px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 100%;
+        color: var(--light);
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: var(--accent);
+        display: flex;
+        align-items: center;
+    }
+    
+    .tagline span {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background-color: var(--primary);
+        margin-right: 10px;
+        transform: rotate(45deg);
+    }
+    
+    h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        max-width: 650px;
+    }
+    
+    h1 .highlight {
+        color: var(--primary);
+        position: relative;
+    }
+    
+    .hero-text {
+        font-size: 1.15rem;
+        max-width: 550px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+        color: rgba(241, 250, 238, 0.85);
+    }
+    
+    .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .btn-primary {
+        background-color: var(--primary);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .btn-primary:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+    }
+    
+    .btn-secondary {
+        color: var(--light);
+        padding: 12px 24px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(241, 250, 238, 0.3);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .btn-secondary:hover {
+        background-color: rgba(241, 250, 238, 0.1);
+    }
+    
+    .tech-illustrations {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .tech-circle {
+        position: relative;
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(168, 218, 220, 0.1), rgba(241, 250, 238, 0.05));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: pulse 8s infinite ease-in-out;
+    }
+    
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+    }
+    
+    .tech-icon {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: rgba(241, 250, 238, 0.1);
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        animation: float 5s infinite ease-in-out;
+    }
+    
+    .tech-icon svg {
+        width: 30px;
+        height: 30px;
+        fill: var(--light);
+    }
+    
+    .tech-icon:nth-child(1) {
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-delay: 0s;
+    }
+    
+    .tech-icon:nth-child(2) {
+        top: 25%;
+        right: 40px;
+        animation-delay: 1s;
+    }
+    
+    .tech-icon:nth-child(3) {
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-delay: 2s;
+    }
+    
+    .tech-icon:nth-child(4) {
+        top: 25%;
+        left: 40px;
+        animation-delay: 3s;
+    }
+    
+    .tech-icon:nth-child(5) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: 70px;
+        background-color: var(--primary);
+        animation: none;
+    }
+    
+    .tech-icon:nth-child(5) svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    
+    .line {
+        position: absolute;
+        background-color: rgba(241, 250, 238, 0.05);
+        z-index: 1;
+    }
+    
+    .horizontal-line {
+        width: 100%;
+        height: 1px;
+    }
+    
+    .vertical-line {
+        width: 1px;
+        height: 100%;
+    }
+    
+    .lines-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    
+    .animated-shapes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        overflow: hidden;
+    }
+    
+    .shape {
+        position: absolute;
+        background-color: var(--primary);
+        opacity: 0.03;
+        border-radius: 50%;
+    }
+    
+    .canada-badge {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        display: flex;
+        align-items: center;
+        padding: 8px 15px;
+        background-color: rgba(241, 250, 238, 0.1);
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: var(--light);
+        gap: 8px;
+        z-index: 20;
+    }
+    
+    .canada-badge svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--primary);
+    }
+    
+    @media (max-width: 992px) {
+        .tech-illustrations {
+            opacity: 0.15;
+            width: 100%;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            text-align: center;
+            align-items: center;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+        }
+        
+        .hero-text {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .tagline {
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.2rem;
+        }
+        
+        .hero-cta {
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+        
+        .btn-primary, .btn-secondary {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>  -->
 </head>
 <body>
   <!-- Preloader -->
@@ -73,7 +422,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" id="home">
+  <!-- <section class="hero" id="home">
     <div class="container">
       <div class="hero-content">
         <h1 data-aos="fade-up" data-aos-delay="100">Custom Software & Web Solutions for Growing Businesses</h1>
@@ -84,8 +433,76 @@
         </div>
       </div>
     </div>
-  </section>
-
+  </section> -->
+  <section class="hero-container" id="home">
+    <!-- Background Lines -->
+    <div class="lines-container">
+        <div class="line horizontal-line" style="top: 25%"></div>
+        <div class="line horizontal-line" style="top: 50%"></div>
+        <div class="line horizontal-line" style="top: 75%"></div>
+        <div class="line vertical-line" style="left: 25%"></div>
+        <div class="line vertical-line" style="left: 50%"></div>
+        <div class="line vertical-line" style="left: 75%"></div>
+    </div>
+    
+    <!-- Animated Shapes -->
+    <div class="animated-shapes">
+        <div class="shape" style="width: 300px; height: 300px; top: -100px; left: -100px; animation: pulse 10s infinite alternate;"></div>
+        <div class="shape" style="width: 200px; height: 200px; bottom: -50px; right: 30%; animation: pulse 7s infinite alternate 1s;"></div>
+    </div>
+    
+    <!-- Maple Leaf Grid (Canadian element) -->
+    <div class="maple-grid">
+        <!-- SVG maple leaves placed strategically -->
+        <svg class="maple-leaf" style="grid-column: 2; grid-row: 2;" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"/>
+        </svg>
+        <svg class="maple-leaf" style="grid-column: 6; grid-row: 3;" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"/>
+        </svg>
+        <svg class="maple-leaf" style="grid-column: 10; grid-row: 5;" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"/>
+        </svg>
+        <svg class="maple-leaf" style="grid-column: 4; grid-row: 7;" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M383.8 351.7c2.5-2.5 105.2-92.4 105.2-92.4l-17.5-7.5c-10-4.9-7.4-11.5-5-17.4 2.4-7.6 20.1-67.3 20.1-67.3s-47.7 10-57.7 12.5c-7.5 2.4-10-2.5-12.5-7.5s-15-32.4-15-32.4-52.6 59.9-55.1 62.3c-10 7.5-20.1 0-17.6-10 0-10 27.6-129.6 27.6-129.6s-30.1 17.4-40.1 22.4c-7.5 5-12.6 5-17.6-5C293.5 72.3 255.9 0 255.9 0s-37.5 72.3-42.5 79.8c-5 10-10 10-17.6 5-10-5-40.1-22.4-40.1-22.4S183.3 182 183.3 192c2.5 10-7.5 17.5-17.6 10-2.5-2.5-55.1-62.3-55.1-62.3S98.1 167 95.6 172s-5 9.9-12.5 7.5C73 177 25.4 167 25.4 167s17.6 59.7 20.1 67.3c2.4 6 5 12.5-5 17.4L23 259.3s102.6 89.9 105.2 92.4c5.1 5 10 7.5 5.1 22.5-5.1 15-10.1 35.1-10.1 35.1s95.2-20.1 105.3-22.6c8.7-.9 18.3 2.5 18.3 12.5S241 512 241 512h30s-5.8-102.7-5.8-112.8 9.5-13.4 18.4-12.5c10 2.5 105.2 22.6 105.2 22.6s-5-20.1-10-35.1 0-17.5 5-22.5z"/>
+        </svg>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="hero-content">
+        <div class="tagline"><span></span>Innovation Meets Excellence</div>
+        <h1>Custom Software & Web Solutions for <span class="highlight">Growing Businesses</span></h1>
+        <p class="hero-text">We turn innovative ideas into fast, secure, and scalable applications that drive your business forward. Trusted by Canadian companies across industries.</p>
+        <div class="hero-cta">
+            <a href="#contact" class="btn-primary">
+                Start Your Project
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <a href="#portfolio" class="btn-secondary">
+                View Our Work
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 8L16 12L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Tech Illustrations -->
+    <div class="tech-illustrations">
+        <div class="tech-circle">
+            <!-- Tech icons -->
+            <div class="tech-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 9.861A2.139 2.139 0 0 0 9.861 12a2.139 2.139 0 0 0 2.139 2.139 2.139 2.139 0 0 0 2.139-2.139A2.139 2.139 0 0 0 12 9.861z"/>
+                    <path d="M14.646 11.293l3.04-3.04a1 1 0 0 1 1.414 1.414l-3.04 3.04a1 1 0 0 1-1.414-1.414z"/>
+                    <path d="M9.879 16.06l3.04-3.04a1 1 0 0 1 1.414 1.414l-3.04 3.04a1 1 0 0 1-1.414-1.414z"/>
+                    <path d="M4.929 11.293l3.04-3.04a1 1 0 0 1 1.414 1.414l-3.04 3.04a1 1 0 0 1-1.414-1.414z"/>
+                    <path d="M9.879 6.525l3.04-3.04a1 1 0 0 1 1.414 1.414l-3.04 3.04a1 1 0 0 1-1.414-1.414z"/>
+</section>
   <!-- About Section -->
   <section id="about" class="py-5">
     <div class="container">
@@ -247,170 +664,98 @@
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="py-5">
-    <div class="container">
-      <div class="section-heading text-center">
-        <h2>Our <span class="text-highlight">Portfolio</span></h2>
-        <p>Explore our recent projects across different industries</p>
+  <!-- Portfolio Section with Fixed Styling -->
+<section id="portfolio" class="py-5">
+  <div class="container">
+    <div class="section-heading text-center mb-5">
+      <h2>Our <span class="text-highlight">Portfolio</span></h2>
+      <p>Explore our recent projects across different industries</p>
+    </div>
+    
+    <!-- Filter Buttons -->
+    <div class="filter-btns text-center mb-4" data-aos="fade-up">
+      <button class="btn filter-btn active" data-filter="all">All Projects</button>
+      <button class="btn filter-btn" data-filter="web">Web Development</button>
+      <button class="btn filter-btn" data-filter="mobile">Mobile Apps</button>
+      <button class="btn filter-btn" data-filter="cloud">Cloud Solutions</button>
+    </div>
+    
+    <!-- Portfolio Items -->
+    <div class="row g-4" id="portfolio-items">
+      <!-- Portfolio Item 1 -->
+      <div class="col-lg-4 col-md-6 portfolio-item web" data-aos="fade-up" data-aos-delay="100">
+        <div class="portfolio-card">
+          <div class="portfolio-img">
+            <img src="images/thunder-truck.png" alt="E-commerce Platform" class="img-fluid">
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <i class="fas fa-link"></i>
+                <h5>View Project</h5>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card-body">
+            <h5>E-commerce Platform</h5>
+            <p>A scalable e-commerce solution for a retail brand with integrated inventory management.</p>
+            <div class="tech-badges mt-2">
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">MongoDB</span>
+            </div>
+          </div>
+        </div>
       </div>
       
-      <!-- Filter Buttons -->
-      <div class="filter-btns" data-aos="fade-up">
-        <button class="btn filter-btn active" data-filter="all">All Projects</button>
-        <button class="btn filter-btn" data-filter="web">Web Development</button>
-        <button class="btn filter-btn" data-filter="mobile">Mobile Apps</button>
-        <button class="btn filter-btn" data-filter="cloud">Cloud Solutions</button>
+      <!-- Portfolio Item 2 -->
+      <div class="col-lg-4 col-md-6 portfolio-item mobile" data-aos="fade-up" data-aos-delay="200">
+        <div class="portfolio-card">
+          <div class="portfolio-img">
+            <img src="images/sakshi-law.png" alt="Inventory Management App" class="img-fluid">
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <i class="fas fa-link"></i>
+                <h5>View Project</h5>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card-body">
+            <h5>Inventory Management App</h5>
+            <p>A mobile app for real-time warehouse inventory tracking and management.</p>
+            <div class="tech-badges mt-2">
+              <span class="tech-badge">Flutter</span>
+              <span class="tech-badge">Firebase</span>
+              <span class="tech-badge">REST API</span>
+            </div>
+          </div>
+        </div>
       </div>
       
-      <!-- Portfolio Items -->
-      <div class="row" id="portfolio-items">
-        <!-- Portfolio Item 1 -->
-        <div class="col-lg-4 col-md-6 portfolio-item web" data-aos="fade-up" data-aos-delay="100">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="images/thunder-truck.png" alt="E-commerce Platform">
-              <div class="portfolio-overlay">
-                <div class="portfolio-overlay-content">
-                  <i class="fas fa-link"></i>
-                  <h5>View Project</h5>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-card-body">
-              <h5>E-commerce Platform</h5>
-              <p>A scalable e-commerce solution for a retail brand with integrated inventory management.</p>
-              <div class="mt-2">
-                <span class="badge">React</span>
-                <span class="badge">Node.js</span>
-                <span class="badge">MongoDB</span>
+      <!-- Portfolio Item 3 -->
+      <div class="col-lg-4 col-md-6 portfolio-item cloud" data-aos="fade-up" data-aos-delay="300">
+        <div class="portfolio-card">
+          <div class="portfolio-img">
+            <img src="images/sensation-edu.png" alt="Cloud Hosting Setup" class="img-fluid">
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <i class="fas fa-link"></i>
+                <h5>View Project</h5>
               </div>
             </div>
           </div>
-        </div>
-        
-        <!-- Portfolio Item 2 -->
-        <div class="col-lg-4 col-md-6 portfolio-item mobile" data-aos="fade-up" data-aos-delay="200">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="images/sakshi-law.png" alt="Inventory Management App">
-              <div class="portfolio-overlay">
-                <div class="portfolio-overlay-content">
-                  <i class="fas fa-link"></i>
-                  <h5>View Project</h5>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-card-body">
-              <h5>Inventory Management App</h5>
-              <p>A mobile app for real-time warehouse inventory tracking and management.</p>
-              <div class="mt-2">
-                <span class="badge">Flutter</span>
-                <span class="badge">Firebase</span>
-                <span class="badge">REST API</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Portfolio Item 3 -->
-        <div class="col-lg-4 col-md-6 portfolio-item cloud" data-aos="fade-up" data-aos-delay="300">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="images/sensation-edu.png" alt="Cloud Hosting Setup">
-              <div class="portfolio-overlay">
-                <div class="portfolio-overlay-content">
-                  <i class="fas fa-link"></i>
-                  <h5>View Project</h5>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-card-body">
-              <h5>Cloud Infrastructure</h5>
-              <p>Reliable cloud infrastructure setup and management for an educational technology startup.</p>
-              <div class="mt-2">
-                <span class="badge">AWS</span>
-                <span class="badge">Docker</span>
-                <span class="badge">Kubernetes</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Portfolio Item 4 -->
-        <div class="col-lg-4 col-md-6 portfolio-item web" data-aos="fade-up" data-aos-delay="400">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="/api/placeholder/600/400" alt="Healthcare Portal">
-              <div class="portfolio-overlay">
-                <div class="portfolio-overlay-content">
-                  <i class="fas fa-link"></i>
-                  <h5>View Project</h5>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-card-body">
-              <h5>Healthcare Portal</h5>
-              <p>A secure patient management system for a network of medical clinics.</p>
-              <div class="mt-2">
-                <span class="badge">Angular</span>
-                <span class="badge">Express</span>
-                <span class="badge">PostgreSQL</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Portfolio Item 5 -->
-        <div class="col-lg-4 col-md-6 portfolio-item mobile" data-aos="fade-up" data-aos-delay="500">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="/api/placeholder/600/400" alt="Fitness Tracking App">
-              <div class="portfolio-overlay">
-                <div class="portfolio-overlay-content">
-                  <i class="fas fa-link"></i>
-                  <h5>View Project</h5>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-card-body">
-              <h5>Fitness Tracking App</h5>
-              <p>A comprehensive mobile application for tracking workouts, nutrition, and progress.</p>
-              <div class="mt-2">
-                <span class="badge">React Native</span>
-                <span class="badge">GraphQL</span>
-                <span class="badge">MongoDB</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Portfolio Item 6 -->
-        <div class="col-lg-4 col-md-6 portfolio-item cloud" data-aos="fade-up" data-aos-delay="600">
-          <div class="portfolio-card">
-            <div class="portfolio-img">
-              <img src="/api/placeholder/600/400" alt="Data Analytics Platform">
-              <div class="portfolio-overlay">
-                <div class="portfolio-overlay-content">
-                  <i class="fas fa-link"></i>
-                  <h5>View Project</h5>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-card-body">
-              <h5>Data Analytics Platform</h5>
-              <p>A cloud-based analytics platform for real-time business intelligence and reporting.</p>
-              <div class="mt-2">
-                <span class="badge">Python</span>
-                <span class="badge">Azure</span>
-                <span class="badge">Power BI</span>
-              </div>
+          <div class="portfolio-card-body">
+            <h5>Cloud Infrastructure</h5>
+            <p>Reliable cloud infrastructure setup and management for an educational technology startup.</p>
+            <div class="tech-badges mt-2">
+              <span class="tech-badge">AWS</span>
+              <span class="tech-badge">Docker</span>
+              <span class="tech-badge">Kubernetes</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Contact Section -->
   <section id="contact" class="py-5 bg-light">
@@ -572,6 +917,37 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   
   <!-- Custom Scripts -->
+   <!-- JavaScript for Filter Functionality -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get all filter buttons
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    // Get all portfolio items
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    // Add click event to filter buttons
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Get filter value
+        const filterValue = this.getAttribute('data-filter');
+        
+        // Show/hide portfolio items based on filter
+        portfolioItems.forEach(item => {
+          if (filterValue === 'all' || item.classList.contains(filterValue)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
   <script>
     // Initialize AOS
     document.addEventListener('DOMContentLoaded', function() {
