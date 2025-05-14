@@ -305,56 +305,69 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-          <form id="contactForm">
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="name" class="form-label">Your Name*</label>
-                <input type="text" class="form-control" id="name" placeholder="e.g., Sarah P." required>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="businessName" class="form-label">Business Name*</label>
-                <input type="text" class="form-control" id="businessName" placeholder="e.g., Sarah's Bakery" required>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="email" class="form-label">Your Email*</label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="phone" class="form-label">Phone (Optional)</label>
-                <input type="tel" class="form-control" id="phone" placeholder="+1 (123) 456-7890">
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="province" class="form-label">What Canadian province/territory is your business in?*</label>
-                <select class="form-select" id="province" required>
-                  <option selected disabled value="">Choose...</option>
-                  <option>Alberta</option><option>British Columbia</option><option>Manitoba</option>
-                  <option>New Brunswick</option><option>Newfoundland and Labrador</option><option>Nova Scotia</option>
-                  <option>Ontario</option><option>Prince Edward Island</option><option>Quebec</option>
-                  <option>Saskatchewan</option><option>Northwest Territories</option><option>Nunavut</option><option>Yukon</option>
-                </select>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="serviceInterest" class="form-label">Which service are you most interested in?</label>
-                <select class="form-select" id="serviceInterest">
-                  <option selected disabled value="">Select a service...</option>
-                  <option>Warehouse & Inventory Management</option>
-                  <option>Custom Software Development</option>
-                  <option>Invoicing & Payment Integration</option>
-                  <option>Restaurant Booking Systems</option>
-                  <option>Other/Not Sure</option>
-                </select>
-              </div>
-              <div class="col-12 mb-3">
-                <label for="message" class="form-label">Tell us a bit about your small business and your biggest digital challenge or goal right now.*</label>
-                <textarea class="form-control" id="message" rows="5" placeholder="e.g., We need a better way to track our stock... or We want to start selling online..." required></textarea>
-              </div>
-              <div class="col-12 text-center">
-                <button type="submit" class="btn btn-primary btn-lg" style="background-color: #e63946; border-color: #e63946;">
-                  <i class="fas fa-paper-plane me-2"></i>Send Message & Get Free Quote
-                </button>
-              </div>
-            </div>
-          </form>
+          <form id="contactForm" action="https://formsubmit.co/el/civico" method="POST">
+  <!-- Optional hidden fields -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+  <input type="hidden" name="_subject" value="New Business Inquiry from Contact Form">
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="name" class="form-label">Your Name*</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="e.g., Sarah P." required>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="businessName" class="form-label">Business Name*</label>
+      <input type="text" class="form-control" id="businessName" name="businessName" placeholder="e.g., Sarah's Bakery" required>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="email" class="form-label">Your Email*</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="phone" class="form-label">Phone (Optional)</label>
+      <input type="tel" class="form-control" id="phone" name="phone" placeholder="+1 (123) 456-7890">
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="province" class="form-label">What Canadian province/territory is your business in?*</label>
+      <select class="form-select" id="province" name="province" required>
+        <option selected disabled value="">Choose...</option>
+        <option>Alberta</option><option>British Columbia</option><option>Manitoba</option>
+        <option>New Brunswick</option><option>Newfoundland and Labrador</option><option>Nova Scotia</option>
+        <option>Ontario</option><option>Prince Edward Island</option><option>Quebec</option>
+        <option>Saskatchewan</option><option>Northwest Territories</option><option>Nunavut</option><option>Yukon</option>
+      </select>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="serviceInterest" class="form-label">Which service are you most interested in?</label>
+      <select class="form-select" id="serviceInterest" name="serviceInterest">
+        <option selected disabled value="">Select a service...</option>
+        <option>Warehouse & Inventory Management</option>
+        <option>Custom Software Development</option>
+        <option>Invoicing & Payment Integration</option>
+        <option>Restaurant Booking Systems</option>
+        <option>Other/Not Sure</option>
+      </select>
+    </div>
+
+    <div class="col-12 mb-3">
+      <label for="message" class="form-label">Tell us a bit about your small business and your biggest digital challenge or goal right now.*</label>
+      <textarea class="form-control" id="message" name="message" rows="5" placeholder="e.g., We need a better way to track our stock... or We want to start selling online..." required></textarea>
+    </div>
+
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-primary btn-lg" style="background-color: #e63946; border-color: #e63946;">
+        <i class="fas fa-paper-plane me-2"></i>Send Message & Get Free Quote
+      </button>
+    </div>
+  </div>
+</form>
+
           <p class="text-center mt-3"><small>We respect your privacy and your time. We aim to respond to all inquiries from Canadian small businesses within one business day.</small></p>
         </div>
       </div>
