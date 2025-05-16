@@ -1665,84 +1665,40 @@
       }
     });
   </script>
-  <!-- Step 1: Add EmailJS SDK to your index.html (add this before the closing </body> tag) -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript">
+ 
+<!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS
   (function() {
-    // Initialize EmailJS with your user ID
     emailjs.init("cA4bdgAWjq4tKW1Ur");
   })();
+
+  // Handle the form submission
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const templateParams = {
+      name: document.getElementById("name").value,
+      businessName: document.getElementById("businessName").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      province: document.getElementById("province").value,
+      serviceInterest: document.getElementById("serviceInterest").value,
+      message: document.getElementById("message").value
+    };
+
+    emailjs.send("service_8x0wy8l", "template_b1l2l0a", templateParams)
+      .then(function(response) {
+        alert("Message sent successfully!");
+        document.getElementById("contactForm").reset();
+      }, function(error) {
+        alert("Failed to send message. Please try again later.");
+        console.error("EmailJS error:", error);
+      });
+  });
 </script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const contactForm = document.querySelector('.php-email-form');
-  
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-      
-      // Show sending indication
-      const sendButton = contactForm.querySelector('button[type="submit"]');
-      const originalButtonText = sendButton.innerHTML;
-      sendButton.innerHTML = '<i class="bi bi-hourglass"></i> Sending...';
-      sendButton.disabled = true;
-      
-      // Prepare template parameters
-      const templateParams = {
-        name: contactForm.querySelector('input[name="name"]').value,
-        email: contactForm.querySelector('input[name="email"]').value,
-        subject: contactForm.querySelector('input[name="subject"]').value,
-        message: contactForm.querySelector('textarea[name="message"]').value
-      };
-      
-      // Using your provided service ID and template ID
-      emailjs.send('service_8x0wy8l', 'template_b1l2l0a', templateParams)
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
-          
-          // Clear form fields
-          contactForm.reset();
-          
-          // Show success message
-          const successDiv = document.createElement('div');
-          successDiv.className = 'sent-message';
-          successDiv.innerHTML = 'Your message has been sent. Thank you!';
-          
-          // Find and hide any previous messages
-          const previousMessages = contactForm.querySelectorAll('.sent-message, .error-message');
-          previousMessages.forEach(msg => msg.style.display = 'none');
-          
-          // Add success message to form
-          const formGroup = contactForm.querySelector('.text-center');
-          formGroup.appendChild(successDiv);
-          
-          // Reset button
-          sendButton.innerHTML = originalButtonText;
-          sendButton.disabled = false;
-        }, function(error) {
-          console.log('FAILED...', error);
-          
-          // Show error message
-          const errorDiv = document.createElement('div');
-          errorDiv.className = 'error-message';
-          errorDiv.innerHTML = 'An error occurred. Please try again later.';
-          
-          // Find and hide any previous messages
-          const previousMessages = contactForm.querySelectorAll('.sent-message, .error-message');
-          previousMessages.forEach(msg => msg.style.display = 'none');
-          
-          // Add error message to form
-          const formGroup = contactForm.querySelector('.text-center');
-          formGroup.appendChild(errorDiv);
-          
-          // Reset button
-          sendButton.innerHTML = originalButtonText;
-          sendButton.disabled = false;
-        });
-    });
-  }
-});
-</script>
+
 
 
  </body>
