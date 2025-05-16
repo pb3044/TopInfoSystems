@@ -660,7 +660,7 @@
   color: #333;     /* optional: for better contrast */
 }
 .tagline .emoji {
-  font-size: 1.5em; /* Adjust size as needed */
+  font-size: 2em; /* Adjust size as needed */
 }
 
     .tagline .emoji:hover {
