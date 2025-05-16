@@ -458,6 +458,35 @@
         background-color: var(--primary);
         color: white;
     }
+  .hockey-icon {
+  width: 1.8em;
+  height: 1.8em;
+  vertical-align: middle;
+  transform: translateY(-0.15em); /* Changed from positive to negative to move it up */
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover: Shoot forward and spin slightly */
+.hockey-icon:hover {
+  transform: translateY(-0.15em) translateX(4px) rotate(-15deg) scale(1.2);
+}
+
+/* Click: Simulate a goal bounce */
+.hockey-icon:active {
+  animation: goalBounce 0.5s ease;
+}
+
+/* Keyframe animation */
+@keyframes goalBounce {
+  0%   { transform: scale(1) translateY(-0.15em); }
+  30%  { transform: scale(1.4) translateY(-10px) rotate(10deg); }
+  60%  { transform: scale(0.9) translateY(-2px) rotate(-5deg); }
+  100% { transform: scale(1.2) translateY(-0.15em); }
+}
+
+
+
   </style>
  </head>
  <body>
@@ -475,13 +504,19 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
    <div class="container">
     <!-- Website Logo -->
-    <a class="navbar-brand" href="#home">
-     <img alt="TopInfosys" height="40" src="images/logo.png">
-     <span class="tagline">
-      Friendly UI, fierce backend — we play like it’s overtime.<span class="emoji">
-       🏒      
-     </span></span>
-    </a>
+ <a class="navbar-brand" href="#home">
+  <img alt="TopInfosys" height="40" src="images/logo.png">
+  <span class="tagline">
+    Friendly UI, fierce backend — we play like it's overtime.
+    <svg class="hockey-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" fill="currentColor" style="vertical-align: middle; position: relative; top: -2px; margin-left: 2px;">
+      <path d="M2 58h20l30-30-6-6L16 52H2z"/>
+      <circle cx="54" cy="54" r="5"/>
+    </svg>
+  </span>
+</a>
+
+
+
     <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
      <span class="navbar-toggler-icon">
      </span>
